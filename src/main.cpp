@@ -1357,8 +1357,8 @@ int64 static GetBlockValue(int nBits, int nHeight, int64 nFees)
 }
 
 static const int64 nTargetTimespan = 24 * 60 * 60; // RemoCoin: 1 day
-static const int64 nTargetSpacing = 2.5 * 60; // RemoCoin: 2.5 minutes
-static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 576
+static const int64 nTargetSpacing = 1 * 60; // RemoCoin: 1 minutes
+static const int64 nInterval = nTargetTimespan / nTargetSpacing; 
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -3460,7 +3460,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block        
-        const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
+        const char* pszTimestamp = "NY Times 1/Jul/2014 Ukraine Goes On Offensive With End of Cease-Fire";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -3472,13 +3472,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1390095618;
+        block.nTime    = 1404236185;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 28917698;
 
         if (fTestNet)
         {
-            block.nTime    = 1390666206;
+            block.nTime    = 1404236185;
             block.nNonce   = 3861367235;
         }
 
