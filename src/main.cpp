@@ -36,7 +36,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6"); //mainnet
+uint256 hashGenesisBlock("0x15239b4ea4f82411a47effc8a9f1ffbe91ac6e785d1d22dbd539ff20b8ee0b2b"); //mainnet
 
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // RemoCoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -3474,7 +3474,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    = 1404236185;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 28917698;
+        block.nNonce   = 3861367235;
 
         if (fTestNet)
         {
@@ -3487,7 +3487,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(block.hashMerkleRoot == uint256("0x621de0ec071f835f23ba6d264c832c89df3df6a3b1793ad5a4df6ebe17202f93"));
         block.print();
         assert(hash == hashGenesisBlock);
 
